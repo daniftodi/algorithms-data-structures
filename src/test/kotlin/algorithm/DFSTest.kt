@@ -11,7 +11,7 @@ internal class DFSTest {
     @Test
     fun dfsTraversal() {
         val reader = AdjacencyListReader(File(this.javaClass.getResource("/graphs/graph1.txt").toURI()))
-        val rootNode = reader.read().get("s")
+        val rootNode = reader.read<String>().find { it.data == "s" }
 
         val traverseResult = DFS().traverse(rootNode!!)
 
@@ -22,7 +22,7 @@ internal class DFSTest {
     @Test
     fun dfsTraversalExample2() {
         val reader = AdjacencyListReader(File(this.javaClass.getResource("/graphs/graph2.txt").toURI()))
-        val rootNode = reader.read().get("f")
+        val rootNode = reader.read<String>().find { it.data == "f" }
 
         val traverseResult = DFS().traverse(rootNode!!)
 

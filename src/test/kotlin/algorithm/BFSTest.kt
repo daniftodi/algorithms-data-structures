@@ -11,17 +11,17 @@ internal class BFSTest {
     @Test
     fun bfsTraversal() {
         val reader = AdjacencyListReader(File(this.javaClass.getResource("/graphs/graph1.txt").toURI()))
-        val rootNode = reader.read().get("s")
+        val rootNode = reader.read<String>().find { it.data == "s" }
 
         val traverseResult = BFS().traverse(rootNode!!)
         assertThat(traverseResult).flatExtracting(Node<String>::data)
-                .containsExactly("s", "a", "b", "c", "d", "e");
+            .containsExactly("s", "a", "b", "c", "d", "e");
     }
 
     @Test
     fun bfsTraversalExample2() {
         val reader = AdjacencyListReader(File(this.javaClass.getResource("/graphs/graph2.txt").toURI()))
-        val rootNode = reader.read().get("f")
+        val rootNode = reader.read<String>().find { it.data == "f" }
 
         val traverseResult = BFS().traverse(rootNode!!)
         assertThat(traverseResult).flatExtracting(Node<String>::data)
