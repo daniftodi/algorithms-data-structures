@@ -1,6 +1,6 @@
 import graph.algorithm.BFS
 import graph.algorithm.DFS
-import graph.algorithm.util.Node
+import graph.util.Node
 
 fun main(args: Array<String>) {
     println("Hello World!")

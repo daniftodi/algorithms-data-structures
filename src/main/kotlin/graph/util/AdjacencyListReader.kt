@@ -1,4 +1,4 @@
-package graph.algorithm.util
+package graph.util
 
 import java.io.File
 

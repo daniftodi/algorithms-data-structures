@@ -1,6 +1,6 @@
 package graph.algorithm
 
-import graph.algorithm.util.AdjacencyListReader
+import graph.util.AdjacencyListReader
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 import java.io.File
