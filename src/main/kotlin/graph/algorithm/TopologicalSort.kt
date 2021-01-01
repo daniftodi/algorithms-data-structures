@@ -1,4 +1,4 @@
-package algorithm
+package graph.algorithm
 
 class TopologicalSort {
 }

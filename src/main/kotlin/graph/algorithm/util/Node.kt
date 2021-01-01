@@ -1,4 +1,4 @@
-package graph
+package graph.algorithm.util
 data class Node<T> (val data:T) {
 
     var neighbours : MutableList<Node<T>> = mutableListOf()

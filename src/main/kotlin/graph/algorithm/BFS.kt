@@ -1,28 +1,28 @@
-package algorithm
+package graph.algorithm
 
-import graph.Node
+import graph.algorithm.util.Node
 import java.util.*
 
-class DFS {
-    fun <T> traverse(s : Node<T>) : List<Node<T>> {
+class BFS {
+    fun <T> traverse(s: Node<T>) : List<Node<T>> {
         val traversalOrder = mutableListOf<Node<T>>()
         val visitedNodes = mutableListOf<Node<T>>()
-        val stack = LinkedList<Node<T>>()
-
-        stack.push(s)
+        val queue = LinkedList<Node<T>>()
+        queue.add(s)
         visitedNodes.add(s)
 
-        while (stack.isNotEmpty()) {
-            val currentNode = stack.pop()
+        while (queue.isNotEmpty()) {
+            val currentNode = queue.poll()
             currentNode.neighbours.forEach {
                 if (!visitedNodes.contains(it)) {
                     visitedNodes.add(it)
-                    stack.push(it)
+                    queue.add(it)
                 }
             }
             traversalOrder.add(currentNode)
         }
 
-        return traversalOrder;
+        return traversalOrder
     }
 }
+

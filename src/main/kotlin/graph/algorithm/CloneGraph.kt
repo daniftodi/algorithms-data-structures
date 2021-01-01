@@ -1,6 +1,6 @@
-package algorithm
+package graph.algorithm
 
-import graph.Node
+import graph.algorithm.util.Node
 import java.util.*
 
 class CloneGraph {

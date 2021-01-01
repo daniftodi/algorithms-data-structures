@@ -1,30 +1,32 @@
-package algorithm
+package graph.algorithm
 
-import graph.AdjacencyListReader
-import graph.Node
+import graph.algorithm.util.AdjacencyListReader
+import graph.algorithm.util.Node
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 import java.io.File
 
-internal class BFSTest {
+internal class DFSTest {
 
     @Test
-    fun bfsTraversal() {
+    fun dfsTraversal() {
         val reader = AdjacencyListReader(File(this.javaClass.getResource("/graphs/graph1.txt").toURI()))
         val rootNode = reader.read<String>().find { it.data == "s" }
 
-        val traverseResult = BFS().traverse(rootNode!!)
+        val traverseResult = DFS().traverse(rootNode!!)
+
         assertThat(traverseResult).flatExtracting(Node<String>::data)
-            .containsExactly("s", "a", "b", "c", "d", "e");
+            .containsExactly("s", "b", "d", "e", "c", "a")
     }
 
     @Test
-    fun bfsTraversalExample2() {
+    fun dfsTraversalExample2() {
         val reader = AdjacencyListReader(File(this.javaClass.getResource("/graphs/graph2.txt").toURI()))
         val rootNode = reader.read<String>().find { it.data == "f" }
 
-        val traverseResult = BFS().traverse(rootNode!!)
+        val traverseResult = DFS().traverse(rootNode!!)
+
         assertThat(traverseResult).flatExtracting(Node<String>::data)
-            .containsExactly("f", "a", "b", "c", "d");
+            .containsExactly("f", "d", "c", "b", "a")
     }
 }
