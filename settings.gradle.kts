@@ -1,3 +1,3 @@
 
-rootProject.name = "graphs"
+rootProject.name = "algorithms-data-structures"
 
