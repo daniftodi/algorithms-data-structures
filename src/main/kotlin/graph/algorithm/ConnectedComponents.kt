@@ -3,19 +3,24 @@ package graph.algorithm
 import graph.util.Node
 import java.util.*
 
+/*
+    Algorithms IlluminatedPart 2:Graph Algorithms and Data Structures
+    8.3.1 Connected Components
+ */
+
 class ConnectedComponents {
 
     fun <T> connectedComponents(adjacencyList: List<Node<T>>): Set<Set<Node<T>>> {
         val visitedNodes = mutableListOf<Node<T>>()
         val connectedComponentsList = mutableSetOf<Set<Node<T>>>()
         adjacencyList.forEach {
-            val connectedComponents = bfs(it, visitedNodes)
-            if (connectedComponents.isNotEmpty()) {
-                connectedComponentsList.add(connectedComponents.toSet())
+            if (!visitedNodes.contains(it)) {
+                val connectedComponents = bfs(it, visitedNodes)
+                if (connectedComponents.isNotEmpty()) {
+                    connectedComponentsList.add(connectedComponents.toSet())
+                }
             }
-
         }
-
         return connectedComponentsList
     }
 

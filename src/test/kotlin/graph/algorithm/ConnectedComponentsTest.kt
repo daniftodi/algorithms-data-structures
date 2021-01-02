@@ -56,6 +56,19 @@ internal class ConnectedComponentsTest {
         assertThat(connectedComponents).flatExtracting(Node<String>::data).containsExactly("f", "e")
     }
 
+    @Test
+    fun connectedComponentsGraph4() {
+        val reader = AdjacencyListReader(File(this.javaClass.getResource("/graphs/graph4.txt").toURI()))
+        val adjacencyList = reader.read<Int>{
+            Node(Integer.valueOf(it))
+        }
+
+        val connectedComponents = ConnectedComponents().connectedComponentsRoots(adjacencyList)
+
+        assertThat(connectedComponents).hasSize(3)
+        assertThat(connectedComponents).flatExtracting(Node<Int>::data).containsExactly(1, 2, 8)
+    }
+
     private fun findRootFor(connectedComponents: Set<Set<Node<String>>>, elementToFind: Node<String>) =
         connectedComponents.filter {
             it.stream().filter { it == elementToFind }

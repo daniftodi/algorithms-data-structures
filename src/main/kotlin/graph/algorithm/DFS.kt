@@ -3,6 +3,11 @@ package graph.algorithm
 import graph.util.Node
 import java.util.*
 
+/*
+    Algorithms IlluminatedPart 2:Graph Algorithms and Data Structures
+    8.4 Depth-First Search
+ */
+
 class DFS {
     fun <T> traverse(s : Node<T>) : List<Node<T>> {
         val traversalOrder = mutableListOf<Node<T>>()

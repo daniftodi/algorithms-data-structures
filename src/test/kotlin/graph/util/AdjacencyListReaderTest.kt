@@ -40,4 +40,17 @@ internal class AdjacencyListReaderTest {
         assertThat(rootNode).isEmpty()
     }
 
+    @Test
+    fun testReadWithIntVertexValues() {
+        val reader = AdjacencyListReader(File(this.javaClass.getResource("/graphs/graph4.txt").toURI()))
+        val adjacencyList = reader.read<Int>{
+            Node(Integer.valueOf(it))
+        }
+
+        assertThat(adjacencyList).isNotNull
+        assertThat(adjacencyList.find { it.data == 1 }?.neighbours).hasSize(2)
+        assertThat(adjacencyList.find { it.data == 1 }?.neighbours).flatExtracting(Node<Int>::data)
+            .containsExactlyInAnyOrder(3, 5)
+    }
+
 }

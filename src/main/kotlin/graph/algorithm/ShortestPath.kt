@@ -3,6 +3,11 @@ package graph.algorithm
 import graph.util.Node
 import java.util.*
 
+/*
+    Algorithms IlluminatedPart 2:Graph Algorithms and Data Structures
+    8.2 Breadth-First Search and Shortest Paths
+ */
+
 class ShortestPath {
 
     fun <T> compute(root : Node<T>, destination : Node<T>) : Int {

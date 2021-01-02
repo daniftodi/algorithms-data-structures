@@ -3,6 +3,11 @@ package graph.algorithm
 import graph.util.Node
 import java.util.*
 
+/*
+    Algorithms IlluminatedPart 2:Graph Algorithms and Data Structures
+    8.2 Breadth-First Search and Shortest Paths
+ */
+
 class BFS {
     fun <T> traverse(s: Node<T>) : List<Node<T>> {
         val traversalOrder = mutableListOf<Node<T>>()
