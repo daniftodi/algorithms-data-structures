@@ -14,10 +14,10 @@ internal class ArrayHeapTest {
         minHeap.add(2)
         minHeap.add(1)
 
-        assertThat(minHeap.findMin()).isEqualTo(0)
-        assertThat(minHeap.findMin()).isEqualTo(1)
-        assertThat(minHeap.findMin()).isEqualTo(2)
-        assertThat(minHeap.findMin()).isEqualTo(3)
+        assertThat(minHeap.findFirst()).isEqualTo(0)
+        assertThat(minHeap.findFirst()).isEqualTo(1)
+        assertThat(minHeap.findFirst()).isEqualTo(2)
+        assertThat(minHeap.findFirst()).isEqualTo(3)
     }
 
     @Test
@@ -29,9 +29,9 @@ internal class ArrayHeapTest {
         minHeap.add(2)
         minHeap.add(1)
 
-        assertThat(minHeap.findMin()).isEqualTo(3)
-        assertThat(minHeap.findMin()).isEqualTo(2)
-        assertThat(minHeap.findMin()).isEqualTo(1)
-        assertThat(minHeap.findMin()).isEqualTo(0)
+        assertThat(minHeap.findFirst()).isEqualTo(3)
+        assertThat(minHeap.findFirst()).isEqualTo(2)
+        assertThat(minHeap.findFirst()).isEqualTo(1)
+        assertThat(minHeap.findFirst()).isEqualTo(0)
     }
 }

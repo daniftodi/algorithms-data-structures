@@ -22,7 +22,7 @@ class ArrayHeap<T : Comparable<T>>(private val comparator: Comparator<T>) : Heap
         }
     }
 
-    override fun findMin(): T {
+    override fun findFirst(): T {
         val element = list[0]
         list[0] = list[list.size - 1]
         list.removeAt(list.size - 1)
