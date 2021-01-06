@@ -1,6 +1,6 @@
-package graph.algorithm
+package algorithm.graph
 
-import graph.util.Node
+import algorithm.graph.util.Node
 import java.util.*
 
 /*

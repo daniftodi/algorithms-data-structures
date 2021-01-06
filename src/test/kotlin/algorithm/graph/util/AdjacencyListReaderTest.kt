@@ -1,4 +1,4 @@
-package graph.util
+package algorithm.graph.util
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test

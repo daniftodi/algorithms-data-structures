@@ -1,7 +1,9 @@
-package graph.algorithm
+package algorithm.graph.algorithm
 
-import graph.util.AdjacencyListReader
-import graph.util.Node
+import algorithm.graph.BFS
+import algorithm.graph.CloneGraph
+import algorithm.graph.util.AdjacencyListReader
+import algorithm.graph.util.Node
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 import java.io.File

@@ -1,9 +1,9 @@
-package graph.algorithm
+package algorithm.graph
 
-import graph.util.Node
+import algorithm.graph.util.Node
 
 /*
-    Does not check if graph is acyclic, does not work for cyclic graphs
+    Does not check if algorithm.graph is acyclic, does not work for cyclic graphs
     https://en.wikipedia.org/wiki/Topological_sorting
 
     Algorithms IlluminatedPart 2:Graph Algorithms and Data Structures
